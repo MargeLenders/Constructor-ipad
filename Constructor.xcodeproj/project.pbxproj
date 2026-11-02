@@ -7,42 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2926D4CFE57B4C19BB5DE77B /* AudioRingBuffer.swift in Source */ = {isa = PBXBuildFile; fileRef = C0373483047A49D1BDA682A5 /* AudioRingBuffer.swift */; };
-		0B718C5B152C453B850D3B9C /* AudioEngineManager.swift in Source */ = {isa = PBXBuildFile; fileRef = 66E2867FC350408CAEE66021 /* AudioEngineManager.swift */; };
-		DD7DA41169114743B8B6678E /* MetalRenderer.swift in Source */ = {isa = PBXBuildFile; fileRef = 4BA76F19341348F38C83000A /* MetalRenderer.swift */; };
-		4889FD50E9EE4C29880B6300 /* InputManager_iOS.swift in Source */ = {isa = PBXBuildFile; fileRef = D6F5921F9E8441FFB947D949 /* InputManager_iOS.swift */; };
-		6AE43BBD35354B86A4FF5B16 /* GameMTKView_iOS.swift in Source */ = {isa = PBXBuildFile; fileRef = 119AC8F3E8DE4D70B9369027 /* GameMTKView_iOS.swift */; };
-		83991CD6180F4DC48B80E117 /* GameView_iOS.swift in Source */ = {isa = PBXBuildFile; fileRef = 6FBF6771E3684087858E3815 /* GameView_iOS.swift */; };
-		4F4902D6A64C4470928888D1 /* LibretroCore.swift in Source */ = {isa = PBXBuildFile; fileRef = 63BA19EA25D84178A4D2C263 /* LibretroCore.swift */; };
-		218F7CA1208A41A890F1068E /* GameSession.swift in Source */ = {isa = PBXBuildFile; fileRef = 285F5343EDEC474B9532FC05 /* GameSession.swift */; };
-		C1FD0DEB118B429ABA0DC96D /* ConstructorApp_iOS.swift in Source */ = {isa = PBXBuildFile; fileRef = 5E66CE3721244283A1E07D9F /* ConstructorApp_iOS.swift */; };
-		B0257936D1E8403AA89A6A31 /* Shaders.metal in Resource */ = {isa = PBXBuildFile; fileRef = 8C85F43D70F44D86B24E1700 /* Shaders.metal */; };
-		6E268CC4A61A453184A3BEF5 /* Constructor.zip in Resource */ = {isa = PBXBuildFile; fileRef = 0A36BEC9A8AE4C2099FD743E /* Constructor.zip */; };
-		2589F3355B7D46FFAC566A85 /* dosbox_pure_libretro_ios.dylib in Framework */ = {isa = PBXBuildFile; fileRef = 0A239CD23C4B4C218EE1992D /* dosbox_pure_libretro_ios.dylib */; };
+		E13A9D18D6C14F79A9660670 /* AudioRingBuffer.swift in Source */ = {isa = PBXBuildFile; fileRef = 2B91384BA9694B29A8445F87 /* AudioRingBuffer.swift */; };
+		58858D44C76744EF96A93D5E /* AudioEngineManager.swift in Source */ = {isa = PBXBuildFile; fileRef = 61A1460AF1EE4D8F8F77EEE9 /* AudioEngineManager.swift */; };
+		D83FAD8F18A84E71AE83DDD0 /* MetalRenderer.swift in Source */ = {isa = PBXBuildFile; fileRef = 024CED24DEAA4AD9B2ACE757 /* MetalRenderer.swift */; };
+		28A1AB6F62944D039E249D1A /* InputManager_iOS.swift in Source */ = {isa = PBXBuildFile; fileRef = 190C6002B47349C693DC82D0 /* InputManager_iOS.swift */; };
+		5B27F386598D4137A112A7FA /* GameMTKView_iOS.swift in Source */ = {isa = PBXBuildFile; fileRef = FE34FB42FBE0437087EF39B3 /* GameMTKView_iOS.swift */; };
+		0466D02CD1E64731BC5B3EBD /* GameView_iOS.swift in Source */ = {isa = PBXBuildFile; fileRef = FAC9AE4EC35F467BBD998E68 /* GameView_iOS.swift */; };
+		D8576C324BC140839DAE2394 /* LibretroCore.swift in Source */ = {isa = PBXBuildFile; fileRef = D7D10AE94ADB40568FA95128 /* LibretroCore.swift */; };
+		99C4DBB416C34054AB0775B4 /* GameSession.swift in Source */ = {isa = PBXBuildFile; fileRef = B18C30CB66694BD9A9F1CEC3 /* GameSession.swift */; };
+		BF4AC93B838C4EBB9DF7F41F /* ConstructorApp_iOS.swift in Source */ = {isa = PBXBuildFile; fileRef = A39F252A89EE41B48E445D1D /* ConstructorApp_iOS.swift */; };
+		F54C10E728FB46F0A2B8EBD4 /* Shaders.metal in Resource */ = {isa = PBXBuildFile; fileRef = 332688A65E804FE58C2EE676 /* Shaders.metal */; };
+		79FAB043D50C4E5382755D24 /* Constructor.zip in Resource */ = {isa = PBXBuildFile; fileRef = A49CD9039302439EBEAA7110 /* Constructor.zip */; };
+		F9A773F4E6014F4CA9E0886D /* dosbox_pure_libretro_ios.dylib in Framework */ = {isa = PBXBuildFile; fileRef = 1F99CD3E963F40C899D9584B /* dosbox_pure_libretro_ios.dylib */; };
+		6EE9045668544C5A9E09523D /* Assets.xcassets in Resource */ = {isa = PBXBuildFile; fileRef = CE0F5C10954247D1ACBEB870 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C0373483047A49D1BDA682A5 /* AudioRingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AudioRingBuffer.swift"; path = "ConstructorIOS/AudioRingBuffer.swift"; sourceTree = "<group>"; };
-		66E2867FC350408CAEE66021 /* AudioEngineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AudioEngineManager.swift"; path = "ConstructorIOS/AudioEngineManager.swift"; sourceTree = "<group>"; };
-		4BA76F19341348F38C83000A /* MetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MetalRenderer.swift"; path = "ConstructorIOS/MetalRenderer.swift"; sourceTree = "<group>"; };
-		D6F5921F9E8441FFB947D949 /* InputManager_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "InputManager_iOS.swift"; path = "ConstructorIOS/InputManager_iOS.swift"; sourceTree = "<group>"; };
-		119AC8F3E8DE4D70B9369027 /* GameMTKView_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GameMTKView_iOS.swift"; path = "ConstructorIOS/GameMTKView_iOS.swift"; sourceTree = "<group>"; };
-		6FBF6771E3684087858E3815 /* GameView_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GameView_iOS.swift"; path = "ConstructorIOS/GameView_iOS.swift"; sourceTree = "<group>"; };
-		63BA19EA25D84178A4D2C263 /* LibretroCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LibretroCore.swift"; path = "ConstructorIOS/LibretroCore.swift"; sourceTree = "<group>"; };
-		285F5343EDEC474B9532FC05 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GameSession.swift"; path = "ConstructorIOS/GameSession.swift"; sourceTree = "<group>"; };
-		5E66CE3721244283A1E07D9F /* ConstructorApp_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ConstructorApp_iOS.swift"; path = "ConstructorIOS/ConstructorApp_iOS.swift"; sourceTree = "<group>"; };
-		8C85F43D70F44D86B24E1700 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Shaders.metal"; path = "ConstructorIOS/Shaders.metal"; sourceTree = "<group>"; };
-		83488DCCD14E44AF9D6DE7DC /* ConstructorIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ConstructorIOS-Bridging-Header.h"; path = "ConstructorIOS/ConstructorIOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		B09CC680F5134E33A7AA1A9E /* libretro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "libretro.h"; path = "ConstructorIOS/libretro.h"; sourceTree = "<group>"; };
-		0A36BEC9A8AE4C2099FD743E /* Constructor.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = "Constructor.zip"; path = "ConstructorIOS/Constructor.zip"; sourceTree = "<group>"; };
-		0A239CD23C4B4C218EE1992D /* dosbox_pure_libretro_ios.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = "dosbox_pure_libretro_ios.dylib"; path = "ConstructorIOS/dosbox_pure_libretro_ios.dylib"; sourceTree = "<group>"; };
-		86EFF01F8CB04A538AAE6F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "ConstructorIOS/Info.plist"; sourceTree = "<group>"; };
-		28E83813F31A444AB229FCDD /* Constructor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Constructor.entitlements"; path = "ConstructorIOS/Constructor.entitlements"; sourceTree = "<group>"; };
-		F0B9C49B55B14AAE92E74C3A /* Constructor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Constructor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B91384BA9694B29A8445F87 /* AudioRingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AudioRingBuffer.swift"; path = "ConstructorIOS/AudioRingBuffer.swift"; sourceTree = "<group>"; };
+		61A1460AF1EE4D8F8F77EEE9 /* AudioEngineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AudioEngineManager.swift"; path = "ConstructorIOS/AudioEngineManager.swift"; sourceTree = "<group>"; };
+		024CED24DEAA4AD9B2ACE757 /* MetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MetalRenderer.swift"; path = "ConstructorIOS/MetalRenderer.swift"; sourceTree = "<group>"; };
+		190C6002B47349C693DC82D0 /* InputManager_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "InputManager_iOS.swift"; path = "ConstructorIOS/InputManager_iOS.swift"; sourceTree = "<group>"; };
+		FE34FB42FBE0437087EF39B3 /* GameMTKView_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GameMTKView_iOS.swift"; path = "ConstructorIOS/GameMTKView_iOS.swift"; sourceTree = "<group>"; };
+		FAC9AE4EC35F467BBD998E68 /* GameView_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GameView_iOS.swift"; path = "ConstructorIOS/GameView_iOS.swift"; sourceTree = "<group>"; };
+		D7D10AE94ADB40568FA95128 /* LibretroCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LibretroCore.swift"; path = "ConstructorIOS/LibretroCore.swift"; sourceTree = "<group>"; };
+		B18C30CB66694BD9A9F1CEC3 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GameSession.swift"; path = "ConstructorIOS/GameSession.swift"; sourceTree = "<group>"; };
+		A39F252A89EE41B48E445D1D /* ConstructorApp_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ConstructorApp_iOS.swift"; path = "ConstructorIOS/ConstructorApp_iOS.swift"; sourceTree = "<group>"; };
+		332688A65E804FE58C2EE676 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Shaders.metal"; path = "ConstructorIOS/Shaders.metal"; sourceTree = "<group>"; };
+		F01EB26DD8AB404C97372295 /* ConstructorIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ConstructorIOS-Bridging-Header.h"; path = "ConstructorIOS/ConstructorIOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		E387F37EF1DE4F4D88D7A184 /* libretro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "libretro.h"; path = "ConstructorIOS/libretro.h"; sourceTree = "<group>"; };
+		A49CD9039302439EBEAA7110 /* Constructor.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = "Constructor.zip"; path = "ConstructorIOS/Constructor.zip"; sourceTree = "<group>"; };
+		1F99CD3E963F40C899D9584B /* dosbox_pure_libretro_ios.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = "dosbox_pure_libretro_ios.dylib"; path = "ConstructorIOS/dosbox_pure_libretro_ios.dylib"; sourceTree = "<group>"; };
+		CE0F5C10954247D1ACBEB870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Assets.xcassets"; path = "ConstructorIOS/Assets.xcassets"; sourceTree = "<group>"; };
+		334F30F74215437B8BF68BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "ConstructorIOS/Info.plist"; sourceTree = "<group>"; };
+		033E8BDBFBFE4E4881C1185B /* Constructor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Constructor.entitlements"; path = "ConstructorIOS/Constructor.entitlements"; sourceTree = "<group>"; };
+		8BAD1E013EF84C1EA3121D0B /* Constructor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Constructor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4E93E43A9310412BB11668FD /* Frameworks */ = {
+		4B98C0170B8D4CE98396A16C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,41 +54,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		91CE86A961E64610857FFC98 = {
+		5745779D29A94885A6920BDA = {
 			isa = PBXGroup;
 			children = (
-				61A18D0F53C74AB8912BDEFD /* ConstructorIOS */,
-				62022CF43EB1478E9C61E6B7 /* Products */,
+				8EB4581E2E8A4DD8BC8720EF /* ConstructorIOS */,
+				C7FCF58BCAD645769B061DB6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		61A18D0F53C74AB8912BDEFD /* ConstructorIOS */ = {
+		8EB4581E2E8A4DD8BC8720EF /* ConstructorIOS */ = {
 			isa = PBXGroup;
 			children = (
-				C0373483047A49D1BDA682A5 /* AudioRingBuffer.swift */,
-				66E2867FC350408CAEE66021 /* AudioEngineManager.swift */,
-				4BA76F19341348F38C83000A /* MetalRenderer.swift */,
-				D6F5921F9E8441FFB947D949 /* InputManager_iOS.swift */,
-				119AC8F3E8DE4D70B9369027 /* GameMTKView_iOS.swift */,
-				6FBF6771E3684087858E3815 /* GameView_iOS.swift */,
-				63BA19EA25D84178A4D2C263 /* LibretroCore.swift */,
-				285F5343EDEC474B9532FC05 /* GameSession.swift */,
-				5E66CE3721244283A1E07D9F /* ConstructorApp_iOS.swift */,
-				8C85F43D70F44D86B24E1700 /* Shaders.metal */,
-				83488DCCD14E44AF9D6DE7DC /* ConstructorIOS-Bridging-Header.h */,
-				B09CC680F5134E33A7AA1A9E /* libretro.h */,
-				0A36BEC9A8AE4C2099FD743E /* Constructor.zip */,
-				0A239CD23C4B4C218EE1992D /* dosbox_pure_libretro_ios.dylib */,
-				86EFF01F8CB04A538AAE6F02 /* Info.plist */,
-				28E83813F31A444AB229FCDD /* Constructor.entitlements */,
+				2B91384BA9694B29A8445F87 /* AudioRingBuffer.swift */,
+				61A1460AF1EE4D8F8F77EEE9 /* AudioEngineManager.swift */,
+				024CED24DEAA4AD9B2ACE757 /* MetalRenderer.swift */,
+				190C6002B47349C693DC82D0 /* InputManager_iOS.swift */,
+				FE34FB42FBE0437087EF39B3 /* GameMTKView_iOS.swift */,
+				FAC9AE4EC35F467BBD998E68 /* GameView_iOS.swift */,
+				D7D10AE94ADB40568FA95128 /* LibretroCore.swift */,
+				B18C30CB66694BD9A9F1CEC3 /* GameSession.swift */,
+				A39F252A89EE41B48E445D1D /* ConstructorApp_iOS.swift */,
+				332688A65E804FE58C2EE676 /* Shaders.metal */,
+				F01EB26DD8AB404C97372295 /* ConstructorIOS-Bridging-Header.h */,
+				E387F37EF1DE4F4D88D7A184 /* libretro.h */,
+				A49CD9039302439EBEAA7110 /* Constructor.zip */,
+				1F99CD3E963F40C899D9584B /* dosbox_pure_libretro_ios.dylib */,
+				CE0F5C10954247D1ACBEB870 /* Assets.xcassets */,
+				334F30F74215437B8BF68BC9 /* Info.plist */,
+				033E8BDBFBFE4E4881C1185B /* Constructor.entitlements */,
 			);
 			name = ConstructorIOS;
 			sourceTree = "<group>";
 		};
-		62022CF43EB1478E9C61E6B7 /* Products */ = {
+		C7FCF58BCAD645769B061DB6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F0B9C49B55B14AAE92E74C3A /* Constructor.app */,
+				8BAD1E013EF84C1EA3121D0B /* Constructor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,13 +97,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		561CF8CC0CC544D9B00E4E98 /* Constructor */ = {
+		1949E4381A1641E09F1A67E1 /* Constructor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9FBF1CA0D544E269DDD3F80 /* Build configuration list for PBXNativeTarget "Constructor" */;
+			buildConfigurationList = 952A9B1BFF67476AAF23FFA5 /* Build configuration list for PBXNativeTarget "Constructor" */;
 			buildPhases = (
-				7D1A1BB1B0984B8CBF40C037 /* Sources */,
-				4E93E43A9310412BB11668FD /* Frameworks */,
-				F1A1B9B7618146F28489FDCA /* Resources */,
+				2C46281F16AA41DEBE0517D8 /* Sources */,
+				4B98C0170B8D4CE98396A16C /* Frameworks */,
+				CAEEA0709F1B41709BB08C00 /* Resources */,
+				2182A8B7E42D48DDBCFD8F64 /* Sign Embedded Dynamic Libraries */,
 			);
 			buildRules = (
 			);
@@ -108,26 +112,26 @@
 			);
 			name = Constructor;
 			productName = Constructor;
-			productReference = F0B9C49B55B14AAE92E74C3A /* Constructor.app */;
+			productReference = 8BAD1E013EF84C1EA3121D0B /* Constructor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3E3C8857D96241A98131D42E /* Project object */ = {
+		47054614F68C4AD3ACB6C869 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					561CF8CC0CC544D9B00E4E98 = {
+					1949E4381A1641E09F1A67E1 = {
 						CreatedOnToolsVersion = 15.0;
 						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = C9B75D69CCCA4391BAC8903C /* Build configuration list for PBXProject "Constructor" */;
+			buildConfigurationList = 6D3A4D922105421EB0791C93 /* Build configuration list for PBXProject "Constructor" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = es;
 			hasScannedForEncodings = 0;
@@ -135,50 +139,72 @@
 				es,
 				Base,
 			);
-			mainGroup = 91CE86A961E64610857FFC98;
-			productRefGroup = 62022CF43EB1478E9C61E6B7 /* Products */;
+			mainGroup = 5745779D29A94885A6920BDA;
+			productRefGroup = C7FCF58BCAD645769B061DB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				561CF8CC0CC544D9B00E4E98 /* Constructor */,
+				1949E4381A1641E09F1A67E1 /* Constructor */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F1A1B9B7618146F28489FDCA /* Resources */ = {
+		CAEEA0709F1B41709BB08C00 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0257936D1E8403AA89A6A31 /* Shaders.metal in Resources */,
-				6E268CC4A61A453184A3BEF5 /* Constructor.zip in Resources */,
-				2589F3355B7D46FFAC566A85 /* dosbox_pure_libretro_ios.dylib in Resources */,
+				F54C10E728FB46F0A2B8EBD4 /* Shaders.metal in Resources */,
+				79FAB043D50C4E5382755D24 /* Constructor.zip in Resources */,
+				F9A773F4E6014F4CA9E0886D /* dosbox_pure_libretro_ios.dylib in Resources */,
+				6EE9045668544C5A9E09523D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2182A8B7E42D48DDBCFD8F64 /* Sign Embedded Dynamic Libraries */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Sign Embedded Dynamic Libraries";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -n \"$EXPANDED_CODE_SIGN_IDENTITY\" ]; then\n    find \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\" -name \"*.dylib\" -exec codesign --force --sign \"$EXPANDED_CODE_SIGN_IDENTITY\" --timestamp=none {} +\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		7D1A1BB1B0984B8CBF40C037 /* Sources */ = {
+		2C46281F16AA41DEBE0517D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2926D4CFE57B4C19BB5DE77B /* AudioRingBuffer.swift in Sources */,
-				0B718C5B152C453B850D3B9C /* AudioEngineManager.swift in Sources */,
-				DD7DA41169114743B8B6678E /* MetalRenderer.swift in Sources */,
-				4889FD50E9EE4C29880B6300 /* InputManager_iOS.swift in Sources */,
-				6AE43BBD35354B86A4FF5B16 /* GameMTKView_iOS.swift in Sources */,
-				83991CD6180F4DC48B80E117 /* GameView_iOS.swift in Sources */,
-				4F4902D6A64C4470928888D1 /* LibretroCore.swift in Sources */,
-				218F7CA1208A41A890F1068E /* GameSession.swift in Sources */,
-				C1FD0DEB118B429ABA0DC96D /* ConstructorApp_iOS.swift in Sources */,
+				E13A9D18D6C14F79A9660670 /* AudioRingBuffer.swift in Sources */,
+				58858D44C76744EF96A93D5E /* AudioEngineManager.swift in Sources */,
+				D83FAD8F18A84E71AE83DDD0 /* MetalRenderer.swift in Sources */,
+				28A1AB6F62944D039E249D1A /* InputManager_iOS.swift in Sources */,
+				5B27F386598D4137A112A7FA /* GameMTKView_iOS.swift in Sources */,
+				0466D02CD1E64731BC5B3EBD /* GameView_iOS.swift in Sources */,
+				D8576C324BC140839DAE2394 /* LibretroCore.swift in Sources */,
+				99C4DBB416C34054AB0775B4 /* GameSession.swift in Sources */,
+				BF4AC93B838C4EBB9DF7F41F /* ConstructorApp_iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		04566D8E729A40B78754A2DD /* Debug */ = {
+		D2D63B45DA5C4EC289E74EA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -206,7 +232,7 @@
 			};
 			name = Debug;
 		};
-		85527C0418B44A76AC1215DA /* Release */ = {
+		16A801E6A28248B29E12A056 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -228,7 +254,7 @@
 			};
 			name = Release;
 		};
-		62A56EFCA77B476D9ADB6BE3 /* Debug */ = {
+		1E818D07395245B4B89EEB6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -254,7 +280,7 @@
 			};
 			name = Debug;
 		};
-		F2244032975C465D8874290A /* Release */ = {
+		945221C867124265A29506A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -283,20 +309,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C9B75D69CCCA4391BAC8903C /* Build configuration list for PBXProject "Constructor" */ = {
+		6D3A4D922105421EB0791C93 /* Build configuration list for PBXProject "Constructor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04566D8E729A40B78754A2DD /* Debug */,
-				85527C0418B44A76AC1215DA /* Release */,
+				D2D63B45DA5C4EC289E74EA3 /* Debug */,
+				16A801E6A28248B29E12A056 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9FBF1CA0D544E269DDD3F80 /* Build configuration list for PBXNativeTarget "Constructor" */ = {
+		952A9B1BFF67476AAF23FFA5 /* Build configuration list for PBXNativeTarget "Constructor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				62A56EFCA77B476D9ADB6BE3 /* Debug */,
-				F2244032975C465D8874290A /* Release */,
+				1E818D07395245B4B89EEB6D /* Debug */,
+				945221C867124265A29506A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -304,5 +330,5 @@
 /* End XCConfigurationList section */
 
 	};
-	rootObject = 3E3C8857D96241A98131D42E /* Project object */;
+	rootObject = 47054614F68C4AD3ACB6C869 /* Project object */;
 }

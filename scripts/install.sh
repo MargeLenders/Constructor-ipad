@@ -271,6 +271,67 @@ if [ ! -d "$APP_PATH" ]; then
     echo -e "${RED}❌ Build failed. Check /tmp/constructor_xcodebuild.log for details.${RESET}"
     exit 1
 fi
+
+# Ensure AppIcon / Assets.car is compiled
+if [ ! -f "$APP_PATH/Assets.car" ] && [ -d "$ROOT_DIR/ConstructorIOS/Assets.xcassets" ]; then
+    echo -e "${CYAN}🎨 Packaging AppIcon asset catalog...${RESET}"
+    xcrun actool "$ROOT_DIR/ConstructorIOS/Assets.xcassets" \
+        --compile "$APP_PATH" \
+        --platform iphoneos \
+        --minimum-deployment-target 17.0 \
+        --app-icon AppIcon >/dev/null 2>&1 || true
+fi
+
+# Ensure embedded dynamic libraries and app bundle are codesigned
+echo -e "${CYAN}🔏 Code-signing embedded libraries and application bundle...${RESET}"
+SIGN_IDENTITY=""
+if [ -f "$APP_PATH/embedded.mobileprovision" ]; then
+    SIGN_IDENTITY=$(python3 -c "
+import plistlib, hashlib
+try:
+    with open('$APP_PATH/embedded.mobileprovision', 'rb') as f:
+        data = f.read()
+    start = data.find(b'<?xml')
+    end = data.find(b'</plist>') + 8
+    plist = plistlib.loads(data[start:end])
+    for cert_der in plist.get('DeveloperCertificates', []):
+        print(hashlib.sha1(cert_der).hexdigest().upper())
+        break
+except Exception:
+    pass
+" 2>/dev/null || true)
+fi
+
+if [ -z "$SIGN_IDENTITY" ]; then
+    SIGN_IDENTITY="$CERT_SHA"
+fi
+
+if [ -n "$SIGN_IDENTITY" ]; then
+    find "$APP_PATH" -name "*.dylib" -exec codesign --force --sign "$SIGN_IDENTITY" --timestamp=none {} + 2>/dev/null || true
+    
+    ENT_PLIST="/tmp/constructor_entitlements_$$.plist"
+    python3 -c "
+import plistlib
+try:
+    with open('$APP_PATH/embedded.mobileprovision', 'rb') as f:
+        data = f.read()
+    start = data.find(b'<?xml')
+    end = data.find(b'</plist>') + 8
+    plist = plistlib.loads(data[start:end])
+    with open('$ENT_PLIST', 'wb') as out_f:
+        plistlib.dump(plist.get('Entitlements', {}), out_f)
+except Exception:
+    pass
+" 2>/dev/null || true
+
+    if [ -s "$ENT_PLIST" ]; then
+        codesign --force --sign "$SIGN_IDENTITY" --entitlements "$ENT_PLIST" --timestamp=none "$APP_PATH" 2>/dev/null || true
+        rm -f "$ENT_PLIST"
+    else
+        codesign --force --sign "$SIGN_IDENTITY" --entitlements "$ROOT_DIR/ConstructorIOS/Constructor.entitlements" --timestamp=none "$APP_PATH" 2>/dev/null || true
+    fi
+fi
+
 echo -e "${GREEN}✅ Constructor app built and signed successfully!${RESET}"
 
 # ------------------------------------------------------------------------------

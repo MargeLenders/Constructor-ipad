@@ -25,6 +25,7 @@ files = [
     ("libretro.h", "header", "sourcecode.c.h"),
     ("Constructor.zip", "resource", "archive.zip"),
     ("dosbox_pure_libretro_ios.dylib", "framework", "compiled.mach-o.dylib"),
+    ("Assets.xcassets", "resource", "folder.assetcatalog"),
     ("Info.plist", "none", "text.plist.xml"),
     ("Constructor.entitlements", "none", "text.plist.entitlements")
 ]
@@ -46,6 +47,7 @@ product_ref_id = gen_id()
 sources_phase_id = gen_id()
 frameworks_phase_id = gen_id()
 resources_phase_id = gen_id()
+script_phase_id = gen_id()
 
 config_debug_target = gen_id()
 config_release_target = gen_id()
@@ -146,6 +148,7 @@ pbxproj_content = f"""// !$*UTF8*$!
 \t\t\t\t{sources_phase_id} /* Sources */,
 \t\t\t\t{frameworks_phase_id} /* Frameworks */,
 \t\t\t\t{resources_phase_id} /* Resources */,
+\t\t\t\t{script_phase_id} /* Sign Embedded Dynamic Libraries */,
 \t\t\t);
 \t\t\tbuildRules = (
 \t\t\t);
@@ -200,6 +203,27 @@ pbxproj_content = f"""// !$*UTF8*$!
 \t\t\trunOnlyForDeploymentPostprocessing = 0;
 \t\t}};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+\t\t{script_phase_id} /* Sign Embedded Dynamic Libraries */ = {{
+\t\t\tisa = PBXShellScriptBuildPhase;
+\t\t\tbuildActionMask = 2147483647;
+\t\t\tfiles = (
+\t\t\t);
+\t\t\tinputFileListPaths = (
+\t\t\t);
+\t\t\tinputPaths = (
+\t\t\t);
+\t\t\tname = "Sign Embedded Dynamic Libraries";
+\t\t\toutputFileListPaths = (
+\t\t\t);
+\t\t\toutputPaths = (
+\t\t\t);
+\t\t\trunOnlyForDeploymentPostprocessing = 0;
+\t\t\tshellPath = /bin/sh;
+\t\t\tshellScript = "if [ -n \\\"$EXPANDED_CODE_SIGN_IDENTITY\\\" ]; then\\n    find \\\"$TARGET_BUILD_DIR/$PRODUCT_NAME.app\\\" -name \\\"*.dylib\\\" -exec codesign --force --sign \\\"$EXPANDED_CODE_SIGN_IDENTITY\\\" --timestamp=none {{}} +\\nfi\\n";
+\t\t}};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 \t\t{sources_phase_id} /* Sources */ = {{
