@@ -235,6 +235,29 @@ done
 # ------------------------------------------------------------------------------
 echo -e "${CYAN}🔨 Step 6/6: Building and signing Constructor app...${RESET}"
 
+DEFAULT_USER_SLUG="$(whoami | tr '[:upper:]' '[:lower:]' | tr -cd '[:alnum:]')"
+DEFAULT_BUNDLE_ID="com.${DEFAULT_USER_SLUG}.constructor"
+BUNDLE_ID="${BUNDLE_ID:-}"
+
+if [ -z "$BUNDLE_ID" ]; then
+    echo ""
+    echo -e "${BOLD}${CYAN}🏷️  Bundle Identifier Configuration (Apple Developer):${RESET}"
+    echo -e "   Apple requires each developer account to use a globally unique App ID."
+    echo -e "   Press [ENTER] to use default (${BOLD}${DEFAULT_BUNDLE_ID}${RESET}) or type your own:"
+    printf "👉 Bundle Identifier [${DEFAULT_BUNDLE_ID}]: "
+    read -r USER_BUNDLE_ID < /dev/tty 2>/dev/null || true
+    USER_BUNDLE_ID="$(echo "$USER_BUNDLE_ID" | tr -d '[:space:]')"
+    if [ -n "$USER_BUNDLE_ID" ]; then
+        BUNDLE_ID="$USER_BUNDLE_ID"
+    else
+        BUNDLE_ID="$DEFAULT_BUNDLE_ID"
+    fi
+fi
+echo -e "${GREEN}✅ Using Bundle Identifier:${RESET} ${BOLD}${BUNDLE_ID}${RESET}"
+
+# Ensure project Info.plist matches selected bundle identifier
+plutil -replace CFBundleIdentifier -string "$BUNDLE_ID" "$ROOT_DIR/ConstructorIOS/Info.plist" 2>/dev/null || true
+
 TEAM_ID=$(security find-certificate -c "Apple Development" -p 2>/dev/null | openssl x509 -noout -subject 2>/dev/null | sed -n 's/.*OU=\([^,]*\).*/\1/p' | head -n 1 || true)
 if [ -n "$TEAM_ID" ]; then
     echo -e "${GREEN}🔑 Apple Developer Team detected:${RESET} $TEAM_ID"
@@ -245,7 +268,7 @@ APP_PATH=""
 
 # Primary build method: Xcodebuild with automatic provisioning
 echo -e "${CYAN}Building with xcodebuild...${RESET}"
-BUILD_ARGS=(-project Constructor.xcodeproj -scheme Constructor -destination "generic/platform=iOS" -allowProvisioningUpdates SYMROOT="$ROOT_DIR/build")
+BUILD_ARGS=(-project Constructor.xcodeproj -scheme Constructor -destination "generic/platform=iOS" -allowProvisioningUpdates SYMROOT="$ROOT_DIR/build" PRODUCT_BUNDLE_IDENTIFIER="$BUNDLE_ID")
 if [ -n "$TEAM_ID" ]; then
     BUILD_ARGS+=(DEVELOPMENT_TEAM="$TEAM_ID")
 fi
@@ -340,8 +363,8 @@ echo -e "${GREEN}✅ Constructor app built and signed successfully!${RESET}"
 echo -e "${CYAN}🚀 Installing Constructor on your iPad (${TARGET_NAME})...${RESET}"
 xcrun devicectl device install app --device "$TARGET_UDID" "$APP_PATH"
 
-echo -e "${CYAN}⚡ Launching Constructor...${RESET}"
-xcrun devicectl device process launch --device "$TARGET_UDID" com.margelenders.constructor || true
+echo -e "${CYAN}⚡ Launching Constructor (${BUNDLE_ID})...${RESET}"
+xcrun devicectl device process launch --device "$TARGET_UDID" "$BUNDLE_ID" || true
 
 echo ""
 echo -e "${GREEN}============================================================================${RESET}"

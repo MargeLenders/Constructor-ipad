@@ -78,7 +78,7 @@ cd Constructor-ipad
 3. **Detección del Juego:** Detecta el instalador `.pkg` de GOG en `~/Downloads` (o te permite arrastrarlo al Terminal).
 4. **Extracción Determinista del Payload:** Extrae la ISO del CD, música, directorios DOS, genera `AUTOBOOT.DBP` y empaqueta `Constructor.zip`.
 5. **Compilación del Núcleo:** Compila en paralelo el núcleo DOSBox-Pure para ARM64 (`dosbox_pure_libretro_ios.dylib`).
-6. **Asistente de Firma de Código:** Detecta tu identidad personal de Apple Development en Keychain para firma automática.
+6. **Asistente de Firma de Código:** Detecta tu identidad personal de Apple Development en Keychain y te permite indicar tu propio Bundle Identifier único (por defecto `com.<tu_usuario>.constructor`) para evitar colisiones con otros desarrolladores.
 7. **Instalación Directa:** Instala e inicia Constructor directamente en tu iPad conectado mediante `xcrun devicectl`.
 
 ---
@@ -136,7 +136,8 @@ open Constructor.xcodeproj
 2. Pulsa en la pestaña **Signing & Capabilities**.
 3. Asegúrate de marcar **Automatically manage signing**.
 4. En **Team**, selecciona tu nombre (*Personal Team*). Si es tu primera vez, pulsa en *Add Account...* e inicia sesión con tu Apple ID.
-5. En **Bundle Identifier**, puedes conservar `com.margelenders.constructor` o cambiarlo por uno único tuyo (ej. `com.tu_nombre.constructor`).
+5. En **Bundle Identifier**, cambia el valor por un identificador único tuyo (ej. `com.tu_nombre.constructor` o `com.<tu_apodo>.constructor`).
+   > ⚠️ **Importante**: Apple exige que cada desarrollador tenga un Bundle Identifier único a nivel mundial. Cambia `com.tu_nombre.constructor` por tu propio nombre o usuario para que los servidores de Apple puedan generar el perfil de aprovisionamiento de tu cuenta.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -148,6 +149,16 @@ open Constructor.xcodeproj
 │ Bundle Identifier: [ com.tu_nombre.constructor                       ] │
 └────────────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+### 🔧 Solución de Problemas de Firma ("Failed to register bundle identifier")
+
+Si Xcode muestra un error en **Signing & Capabilities** o durante la compilación:
+
+- **Conflicto de Bundle Identifier:** Si ves *"The app identifier cannot be registered to your team. Change your bundle identifier to a unique one to register it"*, cambia el **Bundle Identifier** a una cadena única tuya (por ejemplo, `com.<tu_usuario>.constructor`).
+- **Equipo desconocido o sin cuenta:** Si el desplegable Team muestra una advertencia roja `Unknown Name (...)` o `No Account for Team`, abre el desplegable, pulsa en *Add Account...* y conecta tu Apple ID personal.
+- Una vez resuelto, Xcode mostrará **Provisioning Profile: Xcode Managed Profile** sin advertencias rojas, y al pulsar **▶ Run** (`Cmd + R`) compilará e instalará sin problemas.
 
 ---
 
@@ -310,7 +321,7 @@ Se guardan en el directorio `Documents/SAVEGAME/` de la aplicación. Puedes acce
 No. Para respetar los derechos de propiedad intelectual de System 3, los archivos propietarios del juego (`const.iso`, cinemáticas y sonidos) nunca se suben al repositorio. El instalador automatizado los extrae de tu propia copia adquirida en GOG.
 
 #### Xcode muestra el error *"Failed to register bundle identifier"*.
-El identificador por defecto (`com.margelenders.constructor`) puede estar registrado. En Xcode, ve a la pestaña **Signing & Capabilities** y escribe uno propio (ejemplo: `com.tu_apellido.constructor`).
+Apple exige que cada cuenta de desarrollador tenga un Bundle Identifier único. Cambia el identificador por defecto (`com.tu_nombre.constructor`) por una cadena única tuya (por ejemplo: `com.<tu_usuario>.constructor`).
 
 #### La app inicia en pantalla negra o no carga.
 Asegúrate de haber ejecutado `./scripts/prepare_payload.sh` y comprueba que `ConstructorIOS/Constructor.zip` exista y tenga un tamaño cercano a 400–425 MB.

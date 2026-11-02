@@ -64,10 +64,20 @@ if [ -z "$DEVICE_UDID" ]; then
     exit 1
 fi
 
+BUNDLE_ID=$(python3 -c "
+import plistlib
+try:
+    with open('$APP_PATH/Info.plist', 'rb') as f:
+        plist = plistlib.load(f)
+    print(plist.get('CFBundleIdentifier', 'com.yourname.constructor'))
+except Exception:
+    print('com.yourname.constructor')
+" 2>/dev/null || echo "com.yourname.constructor")
+
 echo "📱 Installing Constructor onto device ($DEVICE_UDID)..."
 xcrun devicectl device install app --device "$DEVICE_UDID" "$APP_PATH"
 
-echo "🚀 Launching Constructor on device..."
-xcrun devicectl device process launch --device "$DEVICE_UDID" com.margelenders.constructor || true
+echo "🚀 Launching Constructor on device ($BUNDLE_ID)..."
+xcrun devicectl device process launch --device "$DEVICE_UDID" "$BUNDLE_ID" || true
 
 echo "🎉 Constructor is now running on your iPad!"

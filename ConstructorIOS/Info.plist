@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Constructor</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.margelenders.constructor</string>
+	<string>com.yourname.constructor</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

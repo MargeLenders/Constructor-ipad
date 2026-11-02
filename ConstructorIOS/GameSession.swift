@@ -23,7 +23,7 @@ public final class GameSession: ObservableObject, @unchecked Sendable {
     @Published public private(set) var isRunning: Bool = false
     @Published public private(set) var isPaused: Bool = false
 
-    private let emulationQueue = DispatchQueue(label: "com.margelenders.constructor.emulation", qos: .userInteractive)
+    private let emulationQueue = DispatchQueue(label: "com.constructor.emulation", qos: .userInteractive)
     private var shouldStopEmulation: Bool = false
     private let stateLock = NSLock()
 

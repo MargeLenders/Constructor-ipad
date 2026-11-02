@@ -304,7 +304,7 @@ pbxproj_content = f"""// !$*UTF8*$!
 \t\t\t\t\t"@executable_path",
 \t\t\t\t);
 \t\t\t\tMARKETING_VERSION = 1.0;
-\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = com.margelenders.constructor;
+\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = com.yourname.constructor;
 \t\t\t\tPRODUCT_NAME = "$(TARGET_NAME)";
 \t\t\t\tSWIFT_EMIT_LOC_STRINGS = YES;
 \t\t\t\tSWIFT_OBJC_BRIDGING_HEADER = "ConstructorIOS/ConstructorIOS-Bridging-Header.h";
@@ -330,7 +330,7 @@ pbxproj_content = f"""// !$*UTF8*$!
 \t\t\t\t\t"@executable_path",
 \t\t\t\t);
 \t\t\t\tMARKETING_VERSION = 1.0;
-\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = com.margelenders.constructor;
+\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = com.yourname.constructor;
 \t\t\t\tPRODUCT_NAME = "$(TARGET_NAME)";
 \t\t\t\tSWIFT_EMIT_LOC_STRINGS = YES;
 \t\t\t\tSWIFT_OBJC_BRIDGING_HEADER = "ConstructorIOS/ConstructorIOS-Bridging-Header.h";
