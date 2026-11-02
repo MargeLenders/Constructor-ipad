@@ -3,6 +3,10 @@
 
 > *"You've got a lot of building to do..."*
 
+<p align="center">
+  <img src="docs/images/constructor-gameplay-ipad.jpg" width="850" alt="Constructor (1997) running natively on iPadOS with 1:1 Touch Controls" />
+</p>
+
 [![Platform](https://img.shields.io/badge/Platform-iPadOS%2017%2B%20%7C%20macOS%2014%2B-blue.svg)](https://developer.apple.com)
 [![Architecture](https://img.shields.io/badge/Architecture-ARM64%20(Apple%20Silicon)-orange.svg)](https://www.apple.com)
 [![Graphics](https://img.shields.io/badge/Graphics-Metal%20Accelerated-green.svg)](https://developer.apple.com/metal/)
@@ -71,6 +75,10 @@ cd Constructor-ipad
 
 ./install.sh
 ```
+
+<p align="center">
+  <img src="docs/images/installer-terminal.png" width="850" alt="Constructor (1997) Zero-Touch Installer Terminal Session" />
+</p>
 
 ### What `install.sh` does automatically:
 1. **Repository Setup:** Clones or updates the `Constructor-ipad` repository into `~/Developer/Constructor-ipad`.
