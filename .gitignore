@@ -1,0 +1,28 @@
+# Large game packages and archives (Never commit copyrighted game ROMs/payloads)
+*.pkg
+*.zip
+Constructor.zip
+constructor_en_2.0.0.14.pkg
+ConstructorIOS/Constructor.zip
+ConstructorHost/Constructor.zip
+
+# Build products, binaries and temporary build directories
+build/
+DerivedData/
+*.app/
+*.dSYM/
+*.o
+*.a
+*.dylib
+dosbox_pure_libretro*.dylib
+Constructor_bin
+ConstructorIOS/Constructor_bin
+ConstructorIOS/dosbox_pure_libretro_ios.dylib
+ConstructorHost/dosbox_pure_libretro.dylib
+
+# OS & Xcode IDE
+.DS_Store
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
